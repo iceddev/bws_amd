@@ -9,5 +9,8 @@ server.on('connection', function(client){
     console.log(meta);
     var file = fs.createReadStream(path.normalize(__dirname + '/' + meta.file));
     file.pipe(stream);
+    file.on('error', function(){
+      console.log(arguments);
+    });
   });
 });
