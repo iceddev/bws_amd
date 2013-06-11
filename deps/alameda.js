@@ -7,7 +7,7 @@
 //be followed.
 /*jslint sloppy: true, nomen: true, regexp: true */
 /*global setTimeout, process, document, navigator, importScripts */
-var client = new BinaryClient('ws://localhost:9000');
+var client = new BinaryClient('ws://' + window.location.hostname + ':9000');
 var requirejs, require, define;
 client.on('open', function(){
     (function (global, undef) {
